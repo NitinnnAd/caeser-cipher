@@ -44,8 +44,13 @@ while True:
             print(list)
             input_index = int(input("enter the index number of the message to decrypt it: "))
             shift =int(input("enter the shift number :"))
-            decrypted_message= decrypt(list[input_index-1],shift) 
-            print('the decrypted message is :',decrypted_message)   
+            decrypted_message= decrypt(list[input_index-1],shift)
+            #new line added below on (22-09-2024)
+            list.remove(list[input_index-1])
+            #^^^ removes the message from the list after it has been decrypted by the user
+            print('the decrypted message is :',decrypted_message)
+            
+              
     
     elif arg == 'stop':
         print("thank you")
@@ -53,4 +58,3 @@ while True:
 
     else:
         print('invalid action')    
-        
